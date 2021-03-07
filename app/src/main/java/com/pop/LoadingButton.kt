@@ -36,7 +36,7 @@ class LoadingButton @JvmOverloads constructor(
         typeface = Typeface.create("", Typeface.BOLD)
     }
 
-    private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
+    private var buttonState: ButtonState by Delegates.observable(ButtonState.Completed) { p, old, new ->
 
         when (buttonState) {
             ButtonState.Loading -> setAnimator()
@@ -45,12 +45,12 @@ class LoadingButton @JvmOverloads constructor(
     }
 
     init {
-       context.withStyledAttributes(attrs, R.styleable.LoadingButton){
-           backgroundColors = getColor(R.styleable.LoadingButton_backgroundCustomColor, 0)
-           loadingBarColor = getColor(R.styleable.LoadingButton_loadingBarColor, 0)
-           textColor = getColor(R.styleable.LoadingButton_textColor, 0)
-           loadingCircleColor = getColor(R.styleable.LoadingButton_loadingCircleColor, 0)
-       }
+        context.withStyledAttributes(attrs, R.styleable.LoadingButton) {
+            backgroundColors = getColor(R.styleable.LoadingButton_backgroundCustomColor, 0)
+            loadingBarColor = getColor(R.styleable.LoadingButton_loadingBarColor, 0)
+            textColor = getColor(R.styleable.LoadingButton_textColor, 0)
+            loadingCircleColor = getColor(R.styleable.LoadingButton_loadingCircleColor, 0)
+        }
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -89,11 +89,11 @@ class LoadingButton @JvmOverloads constructor(
             width / 2.0f, height / 2.0f, paint
         )
 
-        val circleLeft: Float = width.toFloat() - .333333f*width
-        val circleTop: Float = height.toFloat() - .666667f*height
+        val circleLeft: Float = width.toFloat() - .333333f * width
+        val circleTop: Float = height.toFloat() - .666667f * height
         val circleRight: Float = circleLeft + 60.0f
         val circleBottom: Float = circleTop + 60.0f
-        val sweepAngle: Float = (animatedWidth/width) * 360
+        val sweepAngle: Float = (animatedWidth / width) * 360
 
         paint.color = loadingCircleColor
         canvas?.drawArc(
@@ -144,7 +144,7 @@ class LoadingButton @JvmOverloads constructor(
         setMeasuredDimension(w, h)
     }
 
-    fun setLoadState(state:ButtonState){
+    fun setLoadState(state: ButtonState) {
         buttonState = state
     }
 }

@@ -3,7 +3,6 @@ package com.pop
 import android.app.DownloadManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -15,7 +14,6 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.pop.utils.sendNotification
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,9 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var udacityDownloadId: Long = 0
     private var retrofitDownloadId: Long = 0
 
-    private lateinit var notificationManager: NotificationManager
-    private lateinit var pendingIntent: PendingIntent
-    private lateinit var action: NotificationCompat.Action
     private lateinit var downloadManager: DownloadManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -189,7 +184,6 @@ class MainActivity : AppCompatActivity() {
             "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter/archive/master.zip"
         private const val retrofitUrl =
             "https://github.com/square/retrofit/archive/master.zip"
-        private const val CHANNEL_ID = "channelId"
     }
 
     private fun createChannel(channelId: String, channelName: String) {

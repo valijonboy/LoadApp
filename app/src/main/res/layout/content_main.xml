@@ -16,23 +16,23 @@
         android:layout_height="60dp"
         android:layout_margin="20dp"
         app:backgroundCustomColor="@color/colorPrimary"
-        app:loadingBarColor="@color/loading_bar_color"
-        app:loadingCircleColor="@color/loading_circle_color"
-        app:textColor="@color/download_button_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:loadingBarColor="@color/loading_bar_color"
+        app:loadingCircleColor="@color/loading_circle_color"
+        app:textColor="@color/download_button_text_color" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standart_padd_16"
+        android:layout_marginTop="@dimen/standart_padd_32"
+        android:layout_marginEnd="@dimen/standart_padd_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -42,23 +42,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="3"
-            android:text="Glide - Image Loading Library by Bump Tech" />
+            android:text="@string/glide_image_loading_library_by_bump_tech" />
 
         <RadioButton
             android:id="@+id/radio_button_udacity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/standart_padd_16"
             android:maxLines="3"
-            android:text="LoadApp - Current repository by Udacity" />
+            android:text="@string/loadapp_current_repository_by_udacity" />
 
         <RadioButton
             android:id="@+id/radio_button_retrofit"
-            android:layout_width="388dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="16dp"
-            android:text="Retrofit - Type-safe HTTP client for Android and
-             Java by Square, Inc" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standart_padd_16"
+            android:text="@string/retrofit_type_safe_http_client_for_android_and_java_by_square_inc" />
     </RadioGroup>
 
     <ImageView
@@ -66,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="184dp"
         android:background="@android:color/darker_gray"
+        android:contentDescription="@string/image_cloud_downloading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

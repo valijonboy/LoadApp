@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <com.pop.LoadingButton
+        android:id="@+id/custom_button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        app:backgroundCustomColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:loadingBarColor="@color/loading_bar_color"
+        app:loadingCircleColor="@color/loading_circle_color"
+        app:textColor="@color/download_button_text_color" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="261dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="@dimen/standart_padd_16"
+        android:layout_marginEnd="@dimen/standart_padd_16"
+        android:background="@android:color/darker_gray"
+        android:contentDescription="@string/image_cloud_downloading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cloud_download" />
+
+    <RadioButton
+        android:id="@+id/radio_button_udacity"
+        android:layout_width="370dp"
+        android:layout_height="@dimen/height_radiobutton_50"
+        android:layout_marginStart="@dimen/standart_padd_16"
+        android:maxLines="3"
+        android:text="@string/loadapp_current_repository_by_udacity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <RadioButton
+        android:id="@+id/radio_button_glide"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_radiobutton_50"
+        android:layout_marginTop="@dimen/standart_padd_16"
+        android:maxLines="3"
+        android:text="@string/glide_image_loading_library_by_bump_tech"
+        app:layout_constraintEnd_toEndOf="@+id/radio_button_udacity"
+        app:layout_constraintStart_toStartOf="@+id/radio_button_udacity"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button_udacity" />
+
+    <RadioButton
+        android:id="@+id/radio_button_retrofit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_radiobutton_50"
+        android:layout_marginTop="@dimen/standart_padd_16"
+        android:text="@string/retrofit_type_safe_http_client_for_android_and_java_by_square_inc"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/radio_button_glide"
+        app:layout_constraintStart_toStartOf="@+id/radio_button_glide"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button_glide" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

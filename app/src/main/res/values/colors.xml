@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#07C2AA</color>
-    <color name="colorPrimaryDark">#004349</color>
+    <color name="colorPrimary">#071FF3</color>
+    <color name="colorPrimaryDark">#010923</color>
     <color name="colorAccent">#F9A825</color>
     <color name="white">#FFFFFF</color>
 
     <color name="loading_bar_color">#0011ff</color>
     <color name="download_button_text_color">#ffffff</color>
-    <color name="loading_circle_color">#FFFF00</color>
+    <color name="loading_circle_color">#00FF04</color>
 </resources>

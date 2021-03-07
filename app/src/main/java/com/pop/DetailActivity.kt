@@ -15,21 +15,15 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         setSupportActionBar(toolbar)
 
+        val type = intent.getStringExtra("TYPE")
+        file_type.text = type
+
         val statusExtra = intent.getStringExtra("STATUS")
-        val fileName = intent.getStringExtra("TYPE")
-
-        file_type.text = fileName
-        status.text = statusExtra
-
-        if (statusExtra == "FAIL") {
-            status.setTextColor(Color.RED)
-        } else if (statusExtra == "SUCCESS") {
-            status.setTextColor(Color.GREEN)
-        }
+        status_type.text = statusExtra
 
 
-        button.setOnClickListener{
-            val mainIntent= Intent(applicationContext,MainActivity::class.java)
+        button.setOnClickListener {
+            val mainIntent = Intent(applicationContext, MainActivity::class.java)
             startActivity(mainIntent)
         }
     }
